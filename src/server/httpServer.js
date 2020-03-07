@@ -1,11 +1,11 @@
 var path = require('path');
 const express = require('express')
-let aylien = require('aylien_textapi');
+const aylien = require('aylien_textapi');
 const dotenv = require('dotenv');
 
 dotenv.config();
 
-let textAylianAPI = new aylien({
+let aylianAPI = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY
 });
@@ -42,7 +42,7 @@ function getTextSentiment(req, res) {
         subjectivity: ''
     };
 
-    textAylianAPI.sentiment({
+    aylianAPI.sentiment({
         'text': req.query.text
     }, function(error, response) {
         if (error === null) {
@@ -67,7 +67,7 @@ function getURLSentiment(req, res) {
         subjectivity: ''
     };
 
-    textAylianAPI.sentiment({
+    aylianAPI.sentiment({
         'url': req.query.url
     }, function(error, response) {
         if (error === null) {
