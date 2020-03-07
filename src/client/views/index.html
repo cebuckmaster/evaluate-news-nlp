@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Evaluate News</title>
+        <meta
+            content="width=device-width initial-scale=1, maximum-scale=1"
+            name="viewport" />
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+<!--
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Name">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+-->                
+                <form id="frmNLP" class="">
+                    <input id="textToCheck" type="text" name="textToCheck" value="" placeholder="Enter text to evaluate">
+                    <p>OR</p>
+                    <input id="urlToCheck" name="urlToCheck" type="url" pattern="https?://.+" title="URL Address starting with http://" value="" placeholder="Enter a URL to evaluate">
+                    <input type="submit" name="" value="Submit">
+                </form>
+            <section>
+                <strong>Evaluation Results:</strong>
+                <div id="textResults"></div>
+                <div id="urlResults"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+
+    </body>
+</html>
