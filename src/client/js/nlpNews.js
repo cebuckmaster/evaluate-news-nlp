@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const frmSubmit = document.querySelector('#frmNLP');
 
     frmSubmit.addEventListener('submit', () => {
-        formSubmit(document.querySelector('#textToCheck').value, document.querySelector('#urlToCheck').value);
+        if(!formSubmit(document.querySelector('#textToCheck').value, document.querySelector('#urlToCheck').value)) {
+            alert('You must enter in some text or a URL for evaluation');
+        };
     });
 
 });
@@ -21,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function formSubmit(textToCheck, urlToCheck) {
 
     if (textToCheck === '' && urlToCheck === '') {
-        alert('You must enter in some text or a URL for evaluation');
         return false;
     }
 
@@ -47,3 +48,6 @@ function displayResultToHTML(id, html) {
 }
 
 export { displayResultToHTML }
+export { formSubmit }
+
+module.exports = formSubmit;

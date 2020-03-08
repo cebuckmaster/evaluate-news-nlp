@@ -2,6 +2,10 @@ function urlAPI(evaluateURL) {
 
     let html = '';
 
+    if (evaluateURL == '') {
+        return false;
+    }
+
     fetch('http://localhost:8081/evalURL?url='+evaluateURL)
     .then(resp => resp.json()) 
     .then(function(resp){
@@ -19,4 +23,6 @@ function urlAPI(evaluateURL) {
 }
 
 export { urlAPI }
+
+module.exports = urlAPI;
 

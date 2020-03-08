@@ -2,6 +2,10 @@ function textAPI(evaluateText) {
 
     let html = '';
 
+    if (evaluateText == '') {
+        return false;
+    }
+
     fetch('http://localhost:8081/evalText?text='+evaluateText)
     .then(resp => resp.json()) 
     .then(function(resp) {
@@ -21,4 +25,6 @@ function textAPI(evaluateText) {
 
 
 export { textAPI }
+
+module.exports = textAPI;
 
