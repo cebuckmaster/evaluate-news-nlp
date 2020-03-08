@@ -1,20 +1,16 @@
-import { runApp } from './js/nlpNews'
 import { textAPI } from './js/textAPIHandler'
 import { urlAPI } from './js/urlAPIHandler'
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import { displayResultToHTML } from './js/nlpNews'
 import './styles/base.scss'
 import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
+import './styles/var.scss'
 
 
 export {
-    runApp,
     textAPI,
     urlAPI,
-    checkForName,
-    handleSubmit
+    displayResultToHTML
 }
 
-console.log("CHANGE!!");

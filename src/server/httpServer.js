@@ -3,9 +3,16 @@ const express = require('express')
 const aylien = require('aylien_textapi');
 const dotenv = require('dotenv');
 
+let json = {
+    result : '',
+    polarity: '',
+    subjectivity: ''
+};
+
+
 dotenv.config();
 
-let aylianAPI = new aylien({
+let aylienAPI = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY
 });
@@ -36,13 +43,7 @@ app.get('/evalURL', getURLSentiment);
 //----------------------------------------------------------------------
 function getTextSentiment(req, res) {
 
-    let json = {
-        result : '',
-        polarity: '',
-        subjectivity: ''
-    };
-
-    aylianAPI.sentiment({
+    aylienAPI.sentiment({
         'text': req.query.text
     }, function(error, response) {
         if (error === null) {
@@ -61,13 +62,7 @@ function getTextSentiment(req, res) {
 //----------------------------------------------------------------------
 function getURLSentiment(req, res) {
 
-    let json = {
-        result : '',
-        polarity: '',
-        subjectivity: ''
-    };
-
-    aylianAPI.sentiment({
+    aylienAPI.sentiment({
         'url': req.query.url
     }, function(error, response) {
         if (error === null) {

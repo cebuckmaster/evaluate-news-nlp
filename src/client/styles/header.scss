@@ -1,6 +1,12 @@
+@import 'var.scss';
+
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px 40px;
     border: 2px solid red;
+    font-size: 3em;
+    color: $font-color;
+    background-color: $base-color;
+    
 }

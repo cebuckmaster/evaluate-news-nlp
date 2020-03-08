@@ -1,19 +1,22 @@
-//-----------------------------------------
 function urlAPI(evaluateURL) {
+
+    let html = '';
 
     fetch('http://localhost:8081/evalURL?url='+evaluateURL)
     .then(resp => resp.json()) 
     .then(function(resp){
-        console.log(resp);
-        const result = document.querySelector('#urlResults');
         if (resp.result === 'Success') {
-            result.innerHTML = `<p>Your URL has a polarity of <strong>${resp.polarity}</strong> and a subjectivity of <strong>${resp.subjectivity}</strong></p>`;
+            html = `<p>Your URL has a polarity of <strong>${resp.polarity}</strong> and a subjectivity of <strong>${resp.subjectivity}</strong></p>`;
+            EvaluateAPI.displayResultToHTML('#urlResults', html);
         } else {
-            result.innerHTML = `<p>Error getting Sentiment from Aylien API</p>`;
+            html = `<p>Error getting Sentiment from Aylien API</p>`;
+            EvaluateAPI.displayResultToHTML('#urlResults', html);
         }
     });
 
+    return true;
 
 }
 
 export { urlAPI }
+

@@ -1,0 +1,12 @@
+@import 'var.scss';
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+    border: 2px solid red;
+    font-size: 1em;
+    color: $font-color;
+    background-color: $base-color;
+    
+}
